@@ -6,7 +6,20 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
+// const path = require('path');
+// const helmet = require('helmet');
+
+// app.use(helmet({
+//   contentSecurityPolicy: {
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       connectSrc: ["'self'", 'http://localhost:3000']
+//     }
+//   }
+// }));
+
 app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, 'index.html')));
 
 const users = {}; // { number: socket.id }
 
